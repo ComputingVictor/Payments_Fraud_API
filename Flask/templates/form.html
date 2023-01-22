@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Predictor de fraude</title>
+  <style>
+          body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      form {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      .form-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .form-container div {
+        flex: 1;
+        margin: 10px;
+      }
+  </style>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h1>Predictor de fraude</h1>
+      </div>
+      <div style="text-align: center;">
+      <p>Este proyecto tiene como objetivo predecir si una transacción es fraudulenta o no utilizando variables específicas.<br>
+	Es importante introducir los datos de cada variable en su formato correcto, para ello pueden consultar el diccionario de datos <a href="https://github.com/ComputingVictor/Payments_Fraud_Practice/blob/main/data/processed/Dictionary_processed.md">aquí</a> </p>
+    </div>
+    <br>
+    <br>
+    <form action="/predict" method="POST">
+      <div style="display: flex; flex-wrap: wrap;">
+        <div style="flex: 1;">
+          <label for="step">step:</label>
+          <input type="text" id="step" name="step"><br><br>
+          <label for="type">type:</label>
+          <input type="text" id="type" name="type"><br><br>
+          <label for="amount">amount:</label>
+          <input type="text" id="amount" name="amount"><br><br>
+        </div>
+        <div style="flex: 1;">
+          <label for="device">device:</label>
+          <input type="text" id="device" name="device"><br><br>
+          <label for="connection_time">connection_time:</label>
+          <input type="text" id="connection_time" name="connection_time"><br><br>
+          <label for="nameOrig">nameOrig:</label>
+          <input type="text" id="nameOrig" name="nameOrig"><br><br>
+        </div>
+        <div style="flex: 1;">
+          <label for="gender">gender:</label>
+          <input type="text" id="gender" name="gender"><br><br>
+          <label for="oldbalanceOrg">oldbalanceOrg:</label>
+          <input type="text" id="oldbalanceOrg" name="oldbalanceOrg"><br><br>
+          <label for="age">age:</label>
+          <input type="text" id="age" name="age"><br><br>
+        </div>
+        <div style="flex: 1;">
+          <label for="newbalanceOrig">newbalanceOrig:</label>
+          <input type="text" id="newbalanceOrig" name="newbalanceOrig"><br><br>
+          <label for="zone">zone:</label>
+          <input type="text" id="zone" name="zone"><br><br>
+          <label for="user_number">user_number:</label>
+          <input type="text" id="user_number" name="user_number"><br><br>
+        </div>
+        <div style="flex: 1;">
+          <label for="nameDest">nameDest:</label>
+          <input type="text" id="nameDest" name="nameDest"><br><br>
+          <label for"user_connections">user_connections:</label>
+          <input type="text" id="user_connections" name="user_connections"><br><br>
+          <label for="security_alert">security_alert:</label>
+          <input type="text" id="security_alert" name="security_alert"><br><br>
+        </div>
+        <div style="flex: 1;">
+          <label for="oldbalanceDest">oldbalanceDest:</label>
+          <input type="text" id="oldbalanceDest" name="oldbalanceDest"><br><br>
+          <label for="newbalanceDest">newbalanceDest:</label>
+          <input type="text" id="newbalanceDest" name="newbalanceDest"><br><br>
+
+          <br>
+
+         </div>
+         <input type="submit" value="Predict">
+         </div>
+
+         <br>
+         <br>
+         <h3> {{prediction_text}} </h3>
+         <h1> {{prediction_prob}} </h1>
+
+  </body>
+</html>
+    </form>
+  </body>
+</html>
