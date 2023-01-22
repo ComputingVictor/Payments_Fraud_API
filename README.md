@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![image.png](attachment:image.png)
+![imagen_readme](https://i.postimg.cc/8chwBqrB/image.png)
 
 
 </p>
